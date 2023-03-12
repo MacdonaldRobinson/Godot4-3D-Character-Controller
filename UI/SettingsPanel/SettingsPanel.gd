@@ -21,3 +21,4 @@ func _process(delta):
 
 func _on_camera_control_options_item_selected(index):	
 	CameraControlOptionChanged.emit(index)
+	camera_control_options.focus_mode = Control.FOCUS_NONE	

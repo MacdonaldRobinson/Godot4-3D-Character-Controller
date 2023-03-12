@@ -1,0 +1,267 @@
+[gd_scene load_steps=42 format=3 uid="uid://def78n726hbla"]
+
+[ext_resource type="PackedScene" uid="uid://5gad2g06c5m8" path="res://Characters/OldMage/Gltf/OldMage.gltf" id="1_vofhm"]
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_reu4h"]
+animation = &"Standing Idle 03"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_ci0h2"]
+animation = &"Standing Idle 04"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_qvkl5"]
+animation = &"Standing Jump Running Landing"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_dj0mv"]
+animation = &"Standing Jump Running"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_d50tu"]
+animation = &"Standing Jump"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_7hpnp"]
+animation = &"Crouch Walk Forward"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_8nv5i"]
+animation = &"Crouch Walk Back"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_thp5l"]
+animation = &"Crouch Walk Right"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_usyob"]
+animation = &"Crouch Walk Left"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_6w8p7"]
+animation = &"Crouch Idle"
+
+[sub_resource type="AnimationNodeBlendSpace2D" id="AnimationNodeBlendSpace2D_hn5d1"]
+blend_point_0/node = SubResource("AnimationNodeAnimation_7hpnp")
+blend_point_0/pos = Vector2(1, 0)
+blend_point_1/node = SubResource("AnimationNodeAnimation_8nv5i")
+blend_point_1/pos = Vector2(-1, 0)
+blend_point_2/node = SubResource("AnimationNodeAnimation_thp5l")
+blend_point_2/pos = Vector2(0, -1)
+blend_point_3/node = SubResource("AnimationNodeAnimation_usyob")
+blend_point_3/pos = Vector2(0, 1)
+blend_point_4/node = SubResource("AnimationNodeAnimation_6w8p7")
+blend_point_4/pos = Vector2(0, 0)
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_fgc64"]
+animation = &"Standing Run Forward"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_32vd1"]
+animation = &"Standing Run Back"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_01lxe"]
+animation = &"Standing Run Right"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_ag1yg"]
+animation = &"Standing Run Left"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_umwep"]
+animation = &"standing idle"
+
+[sub_resource type="AnimationNodeBlendSpace2D" id="AnimationNodeBlendSpace2D_4sy1g"]
+blend_point_0/node = SubResource("AnimationNodeAnimation_fgc64")
+blend_point_0/pos = Vector2(1, 0)
+blend_point_1/node = SubResource("AnimationNodeAnimation_32vd1")
+blend_point_1/pos = Vector2(-1, 0)
+blend_point_2/node = SubResource("AnimationNodeAnimation_01lxe")
+blend_point_2/pos = Vector2(0, -1)
+blend_point_3/node = SubResource("AnimationNodeAnimation_ag1yg")
+blend_point_3/pos = Vector2(0, 1)
+blend_point_4/node = SubResource("AnimationNodeAnimation_umwep")
+blend_point_4/pos = Vector2(0, 0)
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_8mros"]
+animation = &"Standing Walk Forward"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_238g3"]
+animation = &"Standing Walk Back"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_tqaxp"]
+animation = &"Standing Walk Right"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_jm8br"]
+animation = &"Standing Walk Left"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_ywunt"]
+animation = &"standing idle"
+
+[sub_resource type="AnimationNodeBlendSpace2D" id="AnimationNodeBlendSpace2D_rjqul"]
+blend_point_0/node = SubResource("AnimationNodeAnimation_8mros")
+blend_point_0/pos = Vector2(1, 0)
+blend_point_1/node = SubResource("AnimationNodeAnimation_238g3")
+blend_point_1/pos = Vector2(-1, 0)
+blend_point_2/node = SubResource("AnimationNodeAnimation_tqaxp")
+blend_point_2/pos = Vector2(0, -1)
+blend_point_3/node = SubResource("AnimationNodeAnimation_jm8br")
+blend_point_3/pos = Vector2(0, 1)
+blend_point_4/node = SubResource("AnimationNodeAnimation_ywunt")
+blend_point_4/pos = Vector2(0, 0)
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_wn14a"]
+animation = &"standing idle 02"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_deefq"]
+animation = &"standing idle"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_egvsl"]
+xfade_time = 0.2
+switch_mode = 2
+advance_mode = 2
+advance_condition = &"long_wait"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_nhvl0"]
+xfade_time = 0.2
+switch_mode = 2
+advance_mode = 2
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_8wl3v"]
+xfade_time = 0.2
+switch_mode = 2
+advance_mode = 2
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_4kcks"]
+xfade_time = 0.2
+switch_mode = 2
+advance_mode = 2
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_ooo8w"]
+xfade_time = 0.2
+advance_mode = 2
+advance_condition = &"walk"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_cks1w"]
+xfade_time = 0.2
+advance_mode = 2
+advance_condition = &"run"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_4rvlx"]
+xfade_time = 0.2
+advance_mode = 2
+advance_condition = &"crouch"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_bivdy"]
+xfade_time = 0.2
+advance_mode = 2
+advance_condition = &"crouch"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_e2hax"]
+advance_mode = 2
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_tgylo"]
+advance_mode = 2
+advance_condition = &"jump"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_x4i4w"]
+xfade_time = 0.2
+advance_mode = 2
+advance_condition = &"jump"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_unl0x"]
+xfade_time = 0.2
+switch_mode = 2
+advance_mode = 2
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_aq0gf"]
+xfade_time = 0.2
+switch_mode = 2
+advance_mode = 2
+
+[sub_resource type="AnimationNodeStateMachine" id="AnimationNodeStateMachine_4wdhp"]
+"states/Standing Idle 03/node" = SubResource("AnimationNodeAnimation_reu4h")
+"states/Standing Idle 03/position" = Vector2(111, 381)
+"states/Standing Idle 04/node" = SubResource("AnimationNodeAnimation_ci0h2")
+"states/Standing Idle 04/position" = Vector2(200, 468)
+"states/Standing Jump/node" = SubResource("AnimationNodeAnimation_d50tu")
+"states/Standing Jump/position" = Vector2(200, 94)
+"states/Standing Jump Running/node" = SubResource("AnimationNodeAnimation_dj0mv")
+"states/Standing Jump Running/position" = Vector2(684, 296)
+"states/Standing Jump Running Landing/node" = SubResource("AnimationNodeAnimation_qvkl5")
+"states/Standing Jump Running Landing/position" = Vector2(855, 182)
+states/Start/position = Vector2(45, 182)
+"states/crouch walk/node" = SubResource("AnimationNodeBlendSpace2D_hn5d1")
+"states/crouch walk/position" = Vector2(340, 279)
+"states/stand run/node" = SubResource("AnimationNodeBlendSpace2D_4sy1g")
+"states/stand run/position" = Vector2(588, 182)
+"states/stand walk/node" = SubResource("AnimationNodeBlendSpace2D_rjqul")
+"states/stand walk/position" = Vector2(406, 182)
+"states/standing idle/node" = SubResource("AnimationNodeAnimation_deefq")
+"states/standing idle/position" = Vector2(195, 182)
+"states/standing idle 02/node" = SubResource("AnimationNodeAnimation_wn14a")
+"states/standing idle 02/position" = Vector2(111, 286)
+transitions = ["standing idle", "standing idle 02", SubResource("AnimationNodeStateMachineTransition_egvsl"), "standing idle 02", "Standing Idle 03", SubResource("AnimationNodeStateMachineTransition_nhvl0"), "Standing Idle 03", "Standing Idle 04", SubResource("AnimationNodeStateMachineTransition_8wl3v"), "Standing Idle 04", "standing idle", SubResource("AnimationNodeStateMachineTransition_4kcks"), "standing idle", "stand walk", SubResource("AnimationNodeStateMachineTransition_ooo8w"), "stand walk", "stand run", SubResource("AnimationNodeStateMachineTransition_cks1w"), "standing idle", "crouch walk", SubResource("AnimationNodeStateMachineTransition_4rvlx"), "stand walk", "crouch walk", SubResource("AnimationNodeStateMachineTransition_bivdy"), "Start", "standing idle", SubResource("AnimationNodeStateMachineTransition_e2hax"), "standing idle", "Standing Jump", SubResource("AnimationNodeStateMachineTransition_tgylo"), "stand run", "Standing Jump Running", SubResource("AnimationNodeStateMachineTransition_x4i4w"), "Standing Jump Running", "Standing Jump Running Landing", SubResource("AnimationNodeStateMachineTransition_unl0x"), "Standing Jump Running Landing", "stand run", SubResource("AnimationNodeStateMachineTransition_aq0gf")]
+graph_offset = Vector2(-17, -5)
+
+[sub_resource type="AnimationNodeStateMachinePlayback" id="AnimationNodeStateMachinePlayback_1fe1p"]
+
+[node name="OldMage" instance=ExtResource("1_vofhm")]
+
+[node name="GeneralSkeleton" parent="Armature" index="0"]
+unique_name_in_owner = false
+bones/0/position = Vector3(-0.0260981, 0.78589, 1.02467)
+bones/1/rotation = Quaternion(0.0488183, 0.0328157, -0.0277406, 0.997883)
+bones/2/rotation = Quaternion(-0.0165701, -0.00480677, -0.00115067, 0.999851)
+bones/3/rotation = Quaternion(-0.0336948, -0.0120258, -0.00034115, 0.99936)
+bones/4/rotation = Quaternion(-0.0327442, -0.0147359, -0.00124122, 0.999354)
+bones/5/rotation = Quaternion(0.0266098, -0.0156866, 0.0376114, 0.998815)
+bones/6/rotation = Quaternion(0.0413986, 0.0142493, -0.0121236, 0.998968)
+bones/8/rotation = Quaternion(0.493048, 0.449363, 0.531446, -0.522056)
+bones/9/rotation = Quaternion(0.0349627, 0.0498022, 0.0475925, 0.997012)
+bones/10/rotation = Quaternion(-0.1229, -0.144417, -0.0528016, 0.980434)
+bones/11/rotation = Quaternion(0.0937535, 0.974007, 0.020757, -0.20516)
+bones/12/rotation = Quaternion(-0.00952362, 0.0032008, -0.0379303, 0.99923)
+bones/13/rotation = Quaternion(-0.0167042, -0.00459037, -0.0352114, 0.99923)
+bones/14/rotation = Quaternion(-0.0139861, -0.002796, -0.0365574, 0.99923)
+bones/16/rotation = Quaternion(-0.0117541, 0.247628, 0.0621214, 0.96679)
+bones/17/rotation = Quaternion(0.00258497, -0.00859914, -0.00117879, 0.999959)
+bones/18/rotation = Quaternion(0.00955666, -0.032218, -0.00453378, 0.999425)
+bones/20/rotation = Quaternion(-0.0413795, 0.286507, 0.0663305, 0.954883)
+bones/21/rotation = Quaternion(0.00132471, -0.0067527, -0.00128051, 0.999976)
+bones/22/rotation = Quaternion(0.00573116, -0.0278133, -0.00463879, 0.999586)
+bones/24/rotation = Quaternion(0.0275141, 0.333363, 0.0107467, 0.942336)
+bones/25/rotation = Quaternion(-0.000376786, -0.00563435, -0.000381584, 0.999984)
+bones/26/rotation = Quaternion(-0.000997194, -0.0181809, -0.00100348, 0.999834)
+bones/28/rotation = Quaternion(0.158983, 0.331527, -0.0305695, 0.929451)
+bones/29/rotation = Quaternion(0.00120031, 0.00204948, -5.92289e-05, 0.999997)
+bones/30/rotation = Quaternion(0.00093745, 0.00187481, 9.03312e-06, 0.999998)
+bones/32/rotation = Quaternion(0.455268, -0.504545, -0.510547, -0.52679)
+bones/33/rotation = Quaternion(0.186804, -0.0136558, -0.192624, 0.963231)
+bones/34/rotation = Quaternion(-0.144814, 0.00395373, 0.0187677, 0.989273)
+bones/35/rotation = Quaternion(0.0169685, 0.949699, -0.123194, 0.287413)
+bones/36/rotation = Quaternion(0.0191542, 0.00387381, 0.0115699, 0.999742)
+bones/37/rotation = Quaternion(0.0663741, 0.0125863, 0.0677207, 0.995414)
+bones/38/rotation = Quaternion(0.0976345, 0.021914, 0.0801952, 0.991744)
+bones/40/rotation = Quaternion(0.155776, -0.343246, -0.0907463, 0.921781)
+bones/41/rotation = Quaternion(0.0696857, -0.188825, -0.05099, 0.978207)
+bones/42/rotation = Quaternion(0.0809945, -0.214726, -0.0589582, 0.971523)
+bones/44/rotation = Quaternion(0.188007, -0.30739, -0.149846, 0.920712)
+bones/45/rotation = Quaternion(0.0534317, -0.113191, -0.0892696, 0.988111)
+bones/46/rotation = Quaternion(0.0443075, -0.0886987, -0.0695944, 0.992636)
+bones/48/rotation = Quaternion(0.144072, -0.188607, -0.212889, 0.947813)
+bones/49/rotation = Quaternion(0.0775475, -0.0648636, -0.15532, 0.982677)
+bones/50/rotation = Quaternion(0.0901537, -0.0752038, -0.181067, 0.976438)
+bones/52/rotation = Quaternion(0.146716, -0.0623456, -0.278823, 0.947019)
+bones/53/rotation = Quaternion(0.0604449, 0.0209426, -0.137045, 0.988497)
+bones/54/rotation = Quaternion(0.0633641, 0.0216825, -0.148065, 0.986708)
+bones/56/rotation = Quaternion(-0.0867299, -0.0317606, 0.0506239, 0.994438)
+bones/57/rotation = Quaternion(0.0369371, 0.00085397, -0.00244223, 0.999314)
+bones/58/rotation = Quaternion(0.0124458, 0.704889, 0.709096, 0.0125999)
+bones/59/rotation = Quaternion(0, -8.42937e-08, -3.79322e-07, 1)
+bones/61/rotation = Quaternion(-0.0531588, 0.000766609, 0.0489545, 0.997385)
+bones/62/rotation = Quaternion(-0.0015772, -0.0446369, 0.00464349, 0.998991)
+bones/63/rotation = Quaternion(0.0299544, 0.705917, 0.707457, 0.0170045)
+bones/64/rotation = Quaternion(0.00369631, -0.000646748, 0.000224021, 0.999993)
+
+[node name="AnimationTree" type="AnimationTree" parent="." index="2"]
+tree_root = SubResource("AnimationNodeStateMachine_4wdhp")
+anim_player = NodePath("../AnimationPlayer")
+active = true
+parameters/playback = SubResource("AnimationNodeStateMachinePlayback_1fe1p")
+parameters/conditions/crouch = false
+parameters/conditions/jump = false
+parameters/conditions/long_wait = false
+parameters/conditions/run = false
+parameters/conditions/walk = false
+"parameters/crouch walk/blend_position" = Vector2(-0.000989139, 0.00623703)
+"parameters/stand run/blend_position" = Vector2(1.01978, -0.00623703)
+"parameters/stand walk/blend_position" = Vector2(1.11474, -0.051975)

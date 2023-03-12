@@ -53,15 +53,15 @@ func handle_third_person_mouse_event(event):
 		spring_arm.rotation.x += event.relative.y * 0.005
 		spring_arm.rotation.y += event.relative.x * 0.005
 		
-		spring_arm.rotation.x = clamp(spring_arm.rotation.x, -1, 0)		
+		spring_arm.rotation.x = clamp(spring_arm.rotation.x, -1, 0.5)		
 		
 	if event is InputEventMouseButton:
 		if event.button_index == MOUSE_BUTTON_WHEEL_UP:
-			spring_arm.spring_length = lerp(spring_arm.spring_length, spring_arm.spring_length + 2, 0.05)
+			spring_arm.spring_length = lerp(spring_arm.spring_length, spring_arm.spring_length - 3, 0.05)
 		elif event.button_index == MOUSE_BUTTON_WHEEL_DOWN:
-			spring_arm.spring_length = lerp(spring_arm.spring_length, spring_arm.spring_length - 2, 0.05)			
+			spring_arm.spring_length = lerp(spring_arm.spring_length, spring_arm.spring_length + 3, 0.05)			
 	
-		spring_arm.spring_length = clamp(spring_arm.spring_length, 3, 10)	
+		spring_arm.spring_length = clamp(spring_arm.spring_length, 1, 10)	
 	
 func _process(delta):
 	self.global_position = look_at_node.global_position

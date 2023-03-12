@@ -1,32 +1,21 @@
-[gd_scene load_steps=6 format=3 uid="uid://b1o4we24n7sf"]
+[gd_scene load_steps=4 format=3 uid="uid://cat2x2uvrdn8b"]
 
-[ext_resource type="Script" path="res://Player/player.gd" id="1_5hrwo"]
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_41yst"]
-albedo_color = Color(0.027451, 0.584314, 0, 1)
-
-[sub_resource type="CapsuleMesh" id="CapsuleMesh_30ucm"]
-
-[sub_resource type="SphereMesh" id="SphereMesh_3j8lh"]
-radius = 0.15
-height = 0.25
+[ext_resource type="Script" path="res://Player/Player.gd" id="1_70vlp"]
+[ext_resource type="PackedScene" uid="uid://def78n726hbla" path="res://Characters/OldMage/old_mage.tscn" id="2_5ldal"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_iqjcs"]
+height = 1.75
 
 [node name="Player" type="CharacterBody3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.4262, 0)
-script = ExtResource("1_5hrwo")
+script = ExtResource("1_70vlp")
+
+[node name="OldMage" parent="." instance=ExtResource("2_5ldal")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.43344, 0)
 
 [node name="CameraLookAtPoint" type="Node3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.872283, 0)
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
-material_override = SubResource("StandardMaterial3D_41yst")
-mesh = SubResource("CapsuleMesh_30ucm")
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="MeshInstance3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.439524, -0.468783)
-mesh = SubResource("SphereMesh_3j8lh")
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.0232331, 0.364667)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.573835, 0)
 shape = SubResource("CapsuleShape3D_iqjcs")

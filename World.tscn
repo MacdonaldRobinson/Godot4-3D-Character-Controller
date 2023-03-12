@@ -1,9 +1,9 @@
-[gd_scene load_steps=10 format=3 uid="uid://dqk7dhn82ry5o"]
+[gd_scene load_steps=10 format=3 uid="uid://h5j466xf3gio"]
 
 [ext_resource type="Texture2D" uid="uid://bjjrpgrpkms6y" path="res://icon.svg" id="1_fl6gh"]
 [ext_resource type="Script" path="res://World.gd" id="1_fw72k"]
 [ext_resource type="PackedScene" uid="uid://bnq40niiqxaf1" path="res://Camera/ThirdPerson/ThirdPersonCameraController.tscn" id="1_no6kj"]
-[ext_resource type="PackedScene" uid="uid://b1o4we24n7sf" path="res://Player/player.tscn" id="1_u8857"]
+[ext_resource type="PackedScene" uid="uid://cat2x2uvrdn8b" path="res://Player/Player.tscn" id="1_u8857"]
 [ext_resource type="PackedScene" uid="uid://dbyk0eoblfaq" path="res://UI/SettingsPanel/SettingsPanel.tscn" id="4_66qok"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_nhtl2"]
