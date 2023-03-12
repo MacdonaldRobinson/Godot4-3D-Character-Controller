@@ -1,0 +1,76 @@
+[gd_scene load_steps=10 format=3 uid="uid://h5j466xf3gio"]
+
+[ext_resource type="Texture2D" uid="uid://bjjrpgrpkms6y" path="res://icon.svg" id="1_fl6gh"]
+[ext_resource type="Script" path="res://World.gd" id="1_fw72k"]
+[ext_resource type="PackedScene" uid="uid://bnq40niiqxaf1" path="res://Camera/ThirdPerson/ThirdPersonCameraController.tscn" id="1_no6kj"]
+[ext_resource type="PackedScene" uid="uid://cat2x2uvrdn8b" path="res://Player/Player.tscn" id="1_u8857"]
+[ext_resource type="PackedScene" uid="uid://dbyk0eoblfaq" path="res://UI/SettingsPanel/SettingsPanel.tscn" id="4_66qok"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_nhtl2"]
+
+[sub_resource type="Sky" id="Sky_cehvq"]
+sky_material = SubResource("ProceduralSkyMaterial_nhtl2")
+
+[sub_resource type="Environment" id="Environment_2pw1h"]
+background_mode = 2
+sky = SubResource("Sky_cehvq")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_6dj1e"]
+albedo_texture = ExtResource("1_fl6gh")
+uv1_triplanar = true
+
+[node name="World" type="Node3D"]
+script = ExtResource("1_fw72k")
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_2pw1h")
+
+[node name="Player" parent="." node_paths=PackedStringArray("camera_controller") instance=ExtResource("1_u8857")]
+camera_controller = NodePath("../CameraController")
+
+[node name="CameraController" parent="." node_paths=PackedStringArray("look_at_node") instance=ExtResource("1_no6kj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
+camera_mode = 1
+look_at_node = NodePath("../Player/CameraLookAtPoint")
+
+[node name="Terrain" type="CSGBox3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.515689, 0)
+material_override = SubResource("StandardMaterial3D_6dj1e")
+use_collision = true
+size = Vector3(100, 1, 100)
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Control" type="MarginContainer" parent="CanvasLayer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/Control"]
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+theme_override_constants/separation = 50
+
+[node name="Control" type="Control" parent="CanvasLayer/Control/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="Label" type="Label" parent="CanvasLayer/Control/VBoxContainer/Control"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 23.0
+text = "Press \"CTRL\" to Capture and Release the mouse"
+
+[node name="SettingsPanel" parent="CanvasLayer/Control/VBoxContainer" node_paths=PackedStringArray("camera_controller") instance=ExtResource("4_66qok")]
+layout_mode = 2
+size_flags_horizontal = 0
+camera_controller = NodePath("../../../../CameraController")
+
+[connection signal="CameraControlOptionChanged" from="CanvasLayer/Control/VBoxContainer/SettingsPanel" to="." method="_on_settings_panel_camera_control_option_changed"]

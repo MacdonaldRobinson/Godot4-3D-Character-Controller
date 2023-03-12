@@ -13,7 +13,7 @@ func _input(event):
 		if Input.mouse_mode == Input.MOUSE_MODE_CAPTURED:
 			Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
 		else:
-			Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
+			Input.mouse_mode = Input.MOUSE_MODE_CAPTURED		
 
 func _physics_process(delta):
 	# Add the gravity.

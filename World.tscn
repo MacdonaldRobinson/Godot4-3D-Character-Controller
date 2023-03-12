@@ -1,9 +1,9 @@
-[gd_scene load_steps=10 format=3 uid="uid://h5j466xf3gio"]
+[gd_scene load_steps=11 format=3]
 
 [ext_resource type="Texture2D" uid="uid://bjjrpgrpkms6y" path="res://icon.svg" id="1_fl6gh"]
 [ext_resource type="Script" path="res://World.gd" id="1_fw72k"]
-[ext_resource type="PackedScene" uid="uid://bnq40niiqxaf1" path="res://Camera/ThirdPerson/ThirdPersonCameraController.tscn" id="1_no6kj"]
-[ext_resource type="PackedScene" uid="uid://cat2x2uvrdn8b" path="res://Player/Player.tscn" id="1_u8857"]
+[ext_resource type="PackedScene" uid="uid://duaksperg3ni3" path="res://Camera/CameraController/CameraController.tscn" id="1_no6kj"]
+[ext_resource type="PackedScene" uid="uid://bcu4e8f12isf0" path="res://Player/Player.tscn" id="1_u8857"]
 [ext_resource type="PackedScene" uid="uid://dbyk0eoblfaq" path="res://UI/SettingsPanel/SettingsPanel.tscn" id="4_66qok"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_nhtl2"]
@@ -14,6 +14,8 @@ sky_material = SubResource("ProceduralSkyMaterial_nhtl2")
 [sub_resource type="Environment" id="Environment_2pw1h"]
 background_mode = 2
 sky = SubResource("Sky_cehvq")
+
+[sub_resource type="AnimationNodeStateMachinePlayback" id="AnimationNodeStateMachinePlayback_yc03r"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_6dj1e"]
 albedo_texture = ExtResource("1_fl6gh")
@@ -28,10 +30,71 @@ environment = SubResource("Environment_2pw1h")
 [node name="Player" parent="." node_paths=PackedStringArray("camera_controller") instance=ExtResource("1_u8857")]
 camera_controller = NodePath("../CameraController")
 
+[node name="GeneralSkeleton" parent="Player/OldMage/Armature" index="0"]
+bones/0/position = Vector3(0.00241009, 0.791169, 1.03982)
+bones/1/rotation = Quaternion(0.00309986, 0.00252582, -0.0010352, 0.999992)
+bones/2/rotation = Quaternion(0.000621903, 2.75594e-06, -0.000876486, 0.999999)
+bones/3/rotation = Quaternion(0.00262086, 0.000149792, 0.000248192, 0.999997)
+bones/4/rotation = Quaternion(0.00263335, 0.000282634, 0.000238091, 0.999997)
+bones/5/rotation = Quaternion(-0.000605265, -0.000549336, -0.00265376, 0.999996)
+bones/6/rotation = Quaternion(-0.00681197, -0.00252516, -0.0015795, 0.999972)
+bones/8/rotation = Quaternion(0.498201, 0.501059, 0.501424, -0.499309)
+bones/9/rotation = Quaternion(0.018224, 0.0138536, 0.00853495, 0.999701)
+bones/10/rotation = Quaternion(-0.0106541, -0.0195963, -0.041431, 0.998892)
+bones/11/rotation = Quaternion(-0.0175613, 0.999388, 0.0116725, -0.0279076)
+bones/12/rotation = Quaternion(-0.000322269, 0.000114544, -0.00133977, 0.999999)
+bones/13/rotation = Quaternion(-0.000591285, -0.00015477, -0.00124499, 0.999999)
+bones/14/rotation = Quaternion(-0.000512741, -0.000120987, -0.00128365, 0.999999)
+bones/16/rotation = Quaternion(0.00057915, 0.00604881, 0.0067204, 0.999959)
+bones/17/rotation = Quaternion(-0.000277949, 0.000941926, 0.000127488, 1)
+bones/18/rotation = Quaternion(-0.000616349, 0.00207876, 0.00029059, 0.999998)
+bones/20/rotation = Quaternion(0.00182487, 0.022533, 0.0176292, 0.999589)
+bones/21/rotation = Quaternion(-0.000127407, 0.000612108, 0.000117133, 1)
+bones/22/rotation = Quaternion(-0.000520191, 0.00260104, 0.000437137, 0.999996)
+bones/24/rotation = Quaternion(0.0134882, 0.0420445, 0.0255556, 0.998698)
+bones/25/rotation = Quaternion(-5.06976e-08, -3.83905e-06, -1.17274e-07, 1)
+bones/26/rotation = Quaternion(0.000214111, 0.0031227, 0.000173879, 0.999995)
+bones/28/rotation = Quaternion(0.0417588, 0.0608196, 0.0244956, 0.996974)
+bones/29/rotation = Quaternion(-6.6281e-07, 5.08575e-07, 2.07076e-08, 1)
+bones/30/rotation = Quaternion(-0.00616765, -0.0109767, 8.0579e-05, 0.999921)
+bones/32/rotation = Quaternion(0.510079, -0.497605, -0.496119, -0.49606)
+bones/33/rotation = Quaternion(-0.0353753, -0.0129908, 0.0316047, 0.99879)
+bones/34/rotation = Quaternion(-0.00355565, 0.015091, 0.00228973, 0.999877)
+bones/35/rotation = Quaternion(0.033365, 0.998563, -0.00169153, 0.0418944)
+bones/36/rotation = Quaternion(0.0016106, 0.000344994, 0.00102728, 0.999998)
+bones/37/rotation = Quaternion(0.00101241, 0.000178918, 0.000997298, 0.999999)
+bones/38/rotation = Quaternion(0.00099182, 0.000219362, 0.000978511, 0.999999)
+bones/40/rotation = Quaternion(0.0153673, 0.00688974, 0.0182616, 0.999691)
+bones/41/rotation = Quaternion(-2.69589e-05, 0.000120948, 1.78548e-05, 1)
+bones/42/rotation = Quaternion(-0.000130489, 0.000421228, 0.000101264, 1)
+bones/44/rotation = Quaternion(0.0127382, -0.00599459, 0.0112072, 0.999838)
+bones/45/rotation = Quaternion(0.000277235, -0.000599551, -0.000472985, 1)
+bones/46/rotation = Quaternion(0.000512536, -0.00106717, -0.000844927, 0.999999)
+bones/48/rotation = Quaternion(0.0115147, -0.00870366, -0.0127015, 0.999815)
+bones/49/rotation = Quaternion(-0.000806644, 0.000687683, 0.00166866, 0.999998)
+bones/50/rotation = Quaternion(0.00278629, -0.00236708, -0.00574361, 0.999977)
+bones/52/rotation = Quaternion(0.0204589, -0.00118313, -0.0444171, 0.998803)
+bones/53/rotation = Quaternion(0.000245476, 8.61451e-05, -0.000559695, 1)
+bones/54/rotation = Quaternion(0.00395655, 0.00137823, -0.00929587, 0.999948)
+bones/56/rotation = Quaternion(-0.0137317, -0.00225579, -0.000382885, 0.999903)
+bones/57/rotation = Quaternion(0.0146867, 0.00047865, 0.00405959, 0.999884)
+bones/58/rotation = Quaternion(0.0018698, 0.709043, 0.705158, 0.00253574)
+bones/59/rotation = Quaternion(0, -8.42937e-08, -3.79322e-07, 1)
+bones/61/rotation = Quaternion(-0.00400207, 0.00279068, -0.00486074, 0.999976)
+bones/62/rotation = Quaternion(0.000438212, -0.0086742, 0.0143424, 0.999859)
+bones/63/rotation = Quaternion(0.00788107, 0.706812, 0.707341, 0.004885)
+bones/64/rotation = Quaternion(9.68812e-05, -5.12014e-05, 5.19181e-06, 1)
+
+[node name="BoneAttachment3D" parent="Player/OldMage/Armature/GeneralSkeleton" index="0"]
+transform = Transform3D(0.999936, 0.0113575, -0.000132323, -0.0113579, 0.999931, -0.00307069, 9.74401e-05, 0.003072, 0.999995, -0.110055, 1.36404, 0.145977)
+
+[node name="AnimationTree" parent="Player/OldMage" index="2"]
+parameters/playback = SubResource("AnimationNodeStateMachinePlayback_yc03r")
+
 [node name="CameraController" parent="." node_paths=PackedStringArray("look_at_node") instance=ExtResource("1_no6kj")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
 camera_mode = 1
-look_at_node = NodePath("../Player/CameraLookAtPoint")
+look_at_node = NodePath("../Player/OldMage/Armature/GeneralSkeleton/BoneAttachment3D/CameraLookAtPoint")
 
 [node name="Terrain" type="CSGBox3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.515689, 0)
@@ -74,3 +137,6 @@ size_flags_horizontal = 0
 camera_controller = NodePath("../../../../CameraController")
 
 [connection signal="CameraControlOptionChanged" from="CanvasLayer/Control/VBoxContainer/SettingsPanel" to="." method="_on_settings_panel_camera_control_option_changed"]
+
+[editable path="Player"]
+[editable path="Player/OldMage"]
