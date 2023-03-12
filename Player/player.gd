@@ -1,6 +1,7 @@
 extends CharacterBody3D
 
 @export var camera_controller: CameraController
+@onready var character: Character = $Character
 
 const SPEED = 5.0
 const JUMP_VELOCITY = 4.5
@@ -15,6 +16,9 @@ func _input(event):
 		else:
 			Input.mouse_mode = Input.MOUSE_MODE_CAPTURED		
 
+func get_look_at_point()-> Vector3:
+	return character.get_look_at_point()
+
 func _physics_process(delta):
 	# Add the gravity.
 	if not is_on_floor():
@@ -28,14 +32,19 @@ func _physics_process(delta):
 	# As good practice, you should replace UI actions with custom gameplay actions.
 	var input_dir = Input.get_vector("right", "left", "backward", "forward")
 	var direction = (transform.basis * Vector3(input_dir.x, 0, input_dir.y)).normalized()
+	
+	
 	if direction:
+		var animation_tree: AnimationStateController = character.get_animation_tree()
+
 		var camera_look_at_point = camera_controller.get_camera_look_at_point()
 		var look_at_point = Vector3(-camera_look_at_point.x, 0, -camera_look_at_point.z)
 		
 		self.look_at(look_at_point)
-		
+
 		velocity.x = direction.x * SPEED
 		velocity.z = direction.z * SPEED
+
 	else:
 		velocity.x = move_toward(velocity.x, 0, SPEED)
 		velocity.z = move_toward(velocity.z, 0, SPEED)

@@ -10,7 +10,7 @@ script = ExtResource("1_guwrm")
 spring_length = 5.0
 
 [node name="Camera3D" type="Camera3D" parent="SpringArm3D"]
-near = 0.2
+near = 0.3
 
 [node name="CameraLookAtPoint" type="Node3D" parent="SpringArm3D/Camera3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -127.889)
