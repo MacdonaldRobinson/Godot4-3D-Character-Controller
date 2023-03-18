@@ -4,7 +4,6 @@
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, user-scalable=no">
 		<title>Godot-4-3d-character-controller</title>
-		<script src="coi-serviceworker.js"></script>
 		<style>
 body {
 	touch-action: none;
