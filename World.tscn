@@ -13,6 +13,7 @@ sky_material = SubResource("ProceduralSkyMaterial_nhtl2")
 
 [sub_resource type="Environment" id="Environment_2pw1h"]
 background_mode = 2
+background_energy_multiplier = 1.5
 sky = SubResource("Sky_cehvq")
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_6dj1e"]
@@ -29,8 +30,6 @@ environment = SubResource("Environment_2pw1h")
 camera_controller = NodePath("../CameraController")
 
 [node name="CameraController" parent="." instance=ExtResource("1_no6kj")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
-camera_mode = 1
 
 [node name="Terrain" type="CSGBox3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.515689, 0)
@@ -65,7 +64,7 @@ size_flags_vertical = 3
 layout_mode = 0
 offset_right = 40.0
 offset_bottom = 23.0
-text = "Press \"CTRL\" to Capture and Release the mouse"
+text = "Press \"ALT\" to Capture and Release the mouse"
 
 [node name="SettingsPanel" parent="CanvasLayer/Control/VBoxContainer" node_paths=PackedStringArray("camera_controller") instance=ExtResource("4_66qok")]
 layout_mode = 2
