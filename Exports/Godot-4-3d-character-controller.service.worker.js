@@ -3,7 +3,7 @@
 // that they need an Internet connection to run the project if desired.
 // Incrementing CACHE_VERSION will kick off the install event and force
 // previously cached resources to be updated from the network.
-const CACHE_VERSION = "1678631572|1902598819";
+const CACHE_VERSION = "1679175280|25256271745";
 const CACHE_PREFIX = "Godot-4-3d-chara-sw-cache-";
 const CACHE_NAME = CACHE_PREFIX + CACHE_VERSION;
 const OFFLINE_URL = "Godot-4-3d-character-controller.offline.html";

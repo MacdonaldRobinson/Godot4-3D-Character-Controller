@@ -1,7 +1,7 @@
 [gd_scene load_steps=16 format=3 uid="uid://d0k6ksnkbb7i4"]
 
-[ext_resource type="Texture2D" uid="uid://81vw6chu4eap" path="res://Textures/Particles/PNG (Transparent)/spark_02.png" id="1_wifjb"]
-[ext_resource type="Texture2D" uid="uid://cae2asvpusy2y" path="res://Textures/Particles/PNG (Transparent)/spark_04.png" id="2_c6crb"]
+[ext_resource type="Texture2D" path="res://Textures/Particles/PNG (Transparent)/spark_02.png" id="1_wifjb"]
+[ext_resource type="Texture2D" path="res://Textures/Particles/PNG (Transparent)/spark_04.png" id="2_c6crb"]
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_1bnls"]
 radius = 0.25
