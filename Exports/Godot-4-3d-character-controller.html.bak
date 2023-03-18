@@ -138,7 +138,7 @@ body {
 
 		<script src="Godot-4-3d-character-controller.js"></script>
 		<script>
-const GODOT_CONFIG = {"args":[],"canvasResizePolicy":2,"executable":"Godot-4-3d-character-controller","experimentalVK":false,"fileSizes":{"Godot-4-3d-character-controller.pck":78681104,"Godot-4-3d-character-controller.wasm":49005737},"focusCanvas":true,"gdextensionLibs":[],"serviceWorker":"Godot-4-3d-character-controller.service.worker.js"};
+const GODOT_CONFIG = {"args":[],"canvasResizePolicy":2,"executable":"Godot-4-3d-character-controller","experimentalVK":false,"fileSizes":{"Godot-4-3d-character-controller.pck":78680352,"Godot-4-3d-character-controller.wasm":49005737},"focusCanvas":true,"gdextensionLibs":[],"serviceWorker":"Godot-4-3d-character-controller.service.worker.js"};
 const engine = new Engine(GODOT_CONFIG);
 
 (function () {

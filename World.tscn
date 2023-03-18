@@ -64,7 +64,7 @@ size_flags_vertical = 3
 layout_mode = 0
 offset_right = 40.0
 offset_bottom = 23.0
-text = "Press \"ALT\" to Capture and Release the mouse"
+text = "Press \"ESCAPE\" to Capture and Release the mouse"
 
 [node name="SettingsPanel" parent="CanvasLayer/Control/VBoxContainer" node_paths=PackedStringArray("camera_controller") instance=ExtResource("4_66qok")]
 layout_mode = 2
